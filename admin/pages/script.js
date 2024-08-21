@@ -38,15 +38,6 @@ export function mostrarDatos() {
             row.innerHTML = `
                 <td class="text-center">${filaNumero++}</td>
                 <td class="text-center">${user.nombre}</td>
-                <td class="text-center">
-                    <div class="flex-container">
-                        <span class="${!user.semana ? 'invisible-value' : ''}">${user.semana || ''}</span>
-                        <select class="form-select semana-select" data-id="${user.id}" data-field="semana">
-                            <option value="---" ${user.semana === "---" ? "selected" : ""}>---</option>
-                            ${Array.from({ length: 13 }, (_, i) => `<option value="semana ${String(i + 1).padStart(2, '0')}" ${user.semana === `semana ${String(i + 1).padStart(2, '0')}` ? "selected" : ""}>semana ${String(i + 1).padStart(2, '0')}</option>`).join('')}
-                        </select>
-                    </div>
-                </td>
 
                 <!-- Aquí se mostrará el contador -->
                 <td class="text-center attendance-cell"></td>
@@ -67,9 +58,6 @@ export function mostrarDatos() {
                 <td class="display-flex-center">
                     <button class="btn btn-primary mg-05em edit-user-button" data-id="${user.id}">
                         <i class="bi bi-pencil"></i>
-                    </button>
-                    <button class="btn btn-danger mg-05em delete-user-button" data-id="${user.id}">
-                        <i class="bi bi-eraser-fill"></i>
                     </button>
                 </td>
             `;

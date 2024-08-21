@@ -24,8 +24,8 @@ async function downloadToExcel() {
             const data = [];
             snapshot.forEach((childSnapshot) => {
                 // Filtrar las columnas que deseas incluir en el archivo Excel
-                const { nombre, semana, estado, lunes, martes, miercoles, jueves, viernes, sabado } = childSnapshot.val();
-                data.push({ nombre, semana, estado, lunes, martes, miercoles, jueves, viernes, sabado });
+                const { nombre, lunes, martes, miercoles, jueves, viernes, sabado } = childSnapshot.val();
+                data.push({ nombre, lunes, martes, miercoles, jueves, viernes, sabado });
             });
 
             // Selecciona la hoja de la plantilla donde deseas insertar los datos
